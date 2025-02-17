@@ -1,9 +1,10 @@
+"use client"
 import {dataGeneralSidebar,
      dataToolsSidebar, 
      dataSupportSidebar} from "./SidebarRoutes.data"
 import { SidebarItem } from "../SidebarItem"
 import { Separator } from "@/components/ui/separator"
-import { Button } from "../ui/button"
+import { Button } from "@/components/ui/button"
 
 
 

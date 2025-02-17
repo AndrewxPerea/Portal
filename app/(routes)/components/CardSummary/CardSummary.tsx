@@ -2,15 +2,45 @@ import { CustomIcon } from "@/components/CustomIcon";
 import { CardSummaryProps } from "./CardSummary.types";
 import { CustomTooltip } from "@/components/CustomTooltip";
 import { cn } from "@/lib/utils";
-import {  MoveDownRight , MoveUpRight, TrendingUp } from "lucide-react";
+import {  Focus, Bug, Circle } from "lucide-react";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+  } from "@/components/ui/card"
+  import Image from 'next/image'
+
 
 
 
 export function CardSummary(props : CardSummaryProps){
-    const {average, icon : Icon, title, tooltipText, total} = props
+    const {average, icon : Icon, title, tooltipText, total, imagenes, altura, ancho, descripcion} = props
     return(
-   
-        <div className="shadow-sm bg-background rounded-lg p-5 hover:shadow-lg transition">
+        <div className="shadow-sm bg-background rounded-lg p-5 items-center hover:shadow-lg transition">
+             <Card>
+                
+        <CardHeader>
+            <CardTitle>{title}</CardTitle>
+            <CardDescription className="items-center">
+            <Image
+                src={imagenes}
+                width={ancho}
+                height={altura}
+                alt="Picture of the author"
+                />
+             
+            </CardDescription>
+        </CardHeader>
+        <CardContent>
+            <p>{descripcion}</p>
+        </CardContent>
+        <CardFooter>
+            <p>Card Footer</p>
+        </CardFooter>
+        </Card>
             <div className="flex justify-between">
                 <div className="flex gap-2 items-center">
                     <CustomIcon icon ={Icon}/>
@@ -27,17 +57,14 @@ export function CardSummary(props : CardSummaryProps){
                 <div className={cn(`flex items-center gap-1 px-2 text-xs text-white rounded-lg h-[20px] bg-black  dark:bg-secundary`) }>
                     {average}%
                     {average <20 &&(
-                        <MoveDownRight strokeWidth={2} className="h-4 w-4"/>
+                        <Focus strokeWidth={2} className="h-4 w-4"/>
                     )}
                     {average >20 && average <70 &&(
-                        <MoveUpRight strokeWidth={2} className="h-4 w-4"/>
+                        <Circle strokeWidth={2} className="h-4 w-4"/>
                     )}
                     {average >70 && average <100 &&(
-                        <TrendingUp strokeWidth={2} className="h-4 w-4"/>
+                        <Bug strokeWidth={2} className="h-4 w-4"/>
                     )}
-
-
-
                 </div>
             </div>
         </div>

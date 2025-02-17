@@ -2,12 +2,12 @@
 
 
 import Link from "next/link";
-import { SidebarItemProps } from "./SidebarItem.types";
+import {  MenuPoliticasItemProps} from "./MenuPoliticasItem.type";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
 
-export function SidebarItem(props : SidebarItemProps){
+export function MenuPoliticasItem(props : MenuPoliticasItemProps){
     const {item} = props
     const {href, icon: Icon, label}  = item
     const pathname = usePathname()

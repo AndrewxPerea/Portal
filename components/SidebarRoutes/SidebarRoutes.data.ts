@@ -18,8 +18,8 @@ export const dataGeneralSidebar = [
     },
     {
         icon : Building2,
-        label : "Companies",
-        href :"/companies"
+        label : "Politicas",
+        href :"/politicas"
     },
     {
         icon : Calendar ,
