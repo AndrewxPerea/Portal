@@ -5,9 +5,11 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-
+import {Paginado}from "./components/Paginado"
 
 export default function OrdenesServiciosReclamos() {
+
+  <Paginado/>
   const [page, setPage] = useState(1);
 
   return (
@@ -29,7 +31,13 @@ export default function OrdenesServiciosReclamos() {
           Gestión en Sistema
         </Button>
       </div>
-
+      <div className="flex justify-center mt-6">
+              <Link href="/politicas ">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                  📞 Politicas
+                </Button>
+              </Link>
+            </div>
       {/* Contenido según la página */}
       {page === 1 && (
         <div className="container mx-auto p-6 flex justify-center">
@@ -168,13 +176,7 @@ export default function OrdenesServiciosReclamos() {
         </Card>
       </div>
       )}
-            <div className="flex justify-center mt-6">
-              <Link href="/politicas ">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                  📞 Politicas
-                </Button>
-              </Link>
-            </div>
+  
 
     </div>
   );

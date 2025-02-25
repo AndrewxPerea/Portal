@@ -11,7 +11,7 @@ export const dataCardsSummary = [
       tooltipText: "Torneo de Futbol TuCable",
       imagenes : "/torneo.jpeg",
       altura: 100,
-      ancho : 200,
+      ancho : 500,
       descripcion: "Torneo de Futbos Empleados TuCable",
       
   },
@@ -21,7 +21,7 @@ export const dataCardsSummary = [
     average : 80 ,
     title : "TuCable Al Cine",
     tooltipText: "see all of the summary",
-    imagenes : "/logo.png",
+    imagenes : "/pelicula.jpeg",
     altura: 100,
     ancho : 500,
     descripcion : "Descripcion"
@@ -62,7 +62,7 @@ export default function Home() {
     </div>
     <div className="grid  grid-cols-1 mt-12 xl:grid-cols-2 gap-x-10">
       <LastCustomers/>
-      <p>last Customers</p>
+      <p>Sales Distributors</p>
     </div>
     </div>
   );
