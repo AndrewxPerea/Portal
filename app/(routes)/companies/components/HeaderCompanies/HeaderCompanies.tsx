@@ -12,8 +12,7 @@ import { CirclePlus } from "lucide-react";
 import { SetStateAction, useState } from "react";
 import { FormCreateCustomer } from "../FormCreateCustomer";
 
-
-export default function HeaderCompanies() {
+export  function HeaderCompanies() {
   const [openModalCreate, setOpenModalCreate] = useState(false);
   return (
     <div className="flex justify-between items-start">
@@ -31,6 +30,5 @@ export default function HeaderCompanies() {
         </DialogContent>
       </Dialog>
     </div>
-    
   );
 }

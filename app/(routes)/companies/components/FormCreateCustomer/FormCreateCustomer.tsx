@@ -15,13 +15,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { FormCreateCustomerProps } from "./FormCreateCustomer.type";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { UploadButton } from "@/utils/uploagthings";
 import { toast } from "sonner";
 import axios from "axios";
@@ -35,10 +28,9 @@ const formSchema = z.object({
 });
 
 export function FormCreateCustomer(props: FormCreateCustomerProps) {
-
-  const { setOpenModalCreate } = props
-  const [photoUploaded, setPhotoUploaded] = useState(false)
-  const router = useRouter()
+  const { setOpenModalCreate } = props;
+  const [photoUploaded, setPhotoUploaded] = useState(false);
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

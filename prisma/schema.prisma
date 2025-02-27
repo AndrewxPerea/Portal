@@ -8,52 +8,42 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Company{
-  id String @id @default(uuid())
-  userld String
-  name String @db.Text
-  description String? @db.Text
-  profilelmage String @db.Text
-  cif String @db.Text
-  Phone String @db.Text
-  country String @db.Text
-  website String @db.Text
-
-  contact Contact[]
- 
-  events Event[]
- 
-  createdAt DateTime @default(now())
-  updatedat DateTime @updatedAt
-
-
+model Company {
+  id           String    @id @default(uuid())
+  userId       String
+  name         String
+  description  String?
+  profileImage String?
+  cif          String?
+  website      String?
+  contact      Contact[]
+  events       Event[]
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
 }
 
 model Contact {
-  id String @id @default(uuid())
-  companyId String? @db.Text
-  nane String @db.Text
-  rote String @db.Text
-  enail String @db.Text
-  Phone String @db.Text
+  id        String   @id @default(uuid())
+  companyId String?  @db.Text
+  nane      String   @db.Text
+  role      String   @db.Text
+  enail     String   @db.Text
+  Phone     String   @db.Text
   createdAt DateTime
   updatedAt DateTime @updatedAt
-  company Company? @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  company   Company? @relation(fields: [companyId], references: [id], onDelete: Cascade)
 
   @@index([companyId])
- 
 }
 
-
-model Event{
-  id String @id @default(uuid())
-  companyId String
-  title String
-  start String
+model Event {
+  id         String   @id @default(uuid())
+  companyId  String
+  title      String
+  start      String
   timeFormat String
-  company Company @relation(fields: [companyId], references: [id])
-  createdAt DateTime
-  
+  company    Company  @relation(fields: [companyId], references: [id])
+  createdAt  DateTime
 
-@@index([companyId])
+  @@index([companyId])
 }
